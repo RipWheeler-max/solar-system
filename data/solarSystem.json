@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "epoch": "2025-01-01T00:00:00Z",
+    "au_km": 149597870.7
+  },
+  "renderDefaults": {
+    "unitsPerAU": 1000,
+    "scaleModeDefault": "demo",
+    "radiusScale": {
+      "demo": { "sun": 0.03, "planet": 20.0, "moon": 40.0 },
+      "real": { "sun": 1.0, "planet": 1.0, "moon": 1.0 }
+    }
+  },
+  "timeDefaults": {
+    "timeScalePresets": [1, 10, 100, 1000, 10000],
+    "timeScaleDefault": 100
+  },
+  "bodies": [
+    {
+      "id": "sun",
+      "name": "太阳",
+      "type": "sun",
+      "radiusKm": 696340,
+      "rotation": { "periodSec": 2192400, "axialTiltDeg": 7.25 },
+      "visual": { "albedoMap": "./textures/2k/2k_sun.jpg" }
+    },
+    {
+      "id": "mercury",
+      "name": "水星",
+      "type": "planet",
+      "parentId": "sun",
+      "radiusKm": 2439.7,
+      "rotation": { "periodSec": 5067030, "axialTiltDeg": 0.034 },
+      "orbit": {
+        "a_AU": 0.387098,
+        "e": 0.20563,
+        "i_deg": 7.005,
+        "Omega_deg": 48.331,
+        "omega_deg": 29.124,
+        "M0_deg": 0,
+        "periodDays": 87.969
+      },
+      "visual": { "albedoMap": "./textures/2k/2k_mercury.jpg" }
+    },
+    {
+      "id": "venus",
+      "name": "金星",
+      "type": "planet",
+      "parentId": "sun",
+      "radiusKm": 6051.8,
+      "rotation": { "periodSec": -20996760, "axialTiltDeg": 177.36 },
+      "orbit": {
+        "a_AU": 0.723332,
+        "e": 0.006772,
+        "i_deg": 3.3947,
+        "Omega_deg": 76.68,
+        "omega_deg": 54.884,
+        "M0_deg": 0,
+        "periodDays": 224.701
+      },
+      "visual": { "albedoMap": "./textures/2k/2k_venus_surface.jpg" }
+    },
+    {
+      "id": "earth",
+      "name": "地球",
+      "type": "planet",
+      "parentId": "sun",
+      "radiusKm": 6371,
+      "rotation": { "periodSec": 86164.1, "axialTiltDeg": 23.439 },
+      "orbit": {
+        "a_AU": 1.0,
+        "e": 0.0167086,
+        "i_deg": 0.00005,
+        "Omega_deg": -11.26064,
+        "omega_deg": 114.20783,
+        "M0_deg": 0,
+        "periodDays": 365.256
+      },
+      "visual": { "albedoMap": "./textures/2k/2k_earth_daymap.jpg" }
+    },
+    {
+      "id": "moon",
+      "name": "月球",
+      "type": "moon",
+      "parentId": "earth",
+      "radiusKm": 1737.4,
+      "rotation": { "periodSec": 2360584.7, "axialTiltDeg": 6.68 },
+      "orbit": {
+        "a_AU": 0.00257,
+        "e": 0.0549,
+        "i_deg": 5.145,
+        "Omega_deg": 125.08,
+        "omega_deg": 318.15,
+        "M0_deg": 0,
+        "periodDays": 27.321661
+      },
+      "visual": { "albedoMap": "./textures/2k/2k_moon.jpg" }
+    },
+    {
+      "id": "mars",
+      "name": "火星",
+      "type": "planet",
+      "parentId": "sun",
+      "radiusKm": 3389.5,
+      "rotation": { "periodSec": 88642.7, "axialTiltDeg": 25.19 },
+      "orbit": {
+        "a_AU": 1.523679,
+        "e": 0.0934,
+        "i_deg": 1.85,
+        "Omega_deg": 49.558,
+        "omega_deg": 286.502,
+        "M0_deg": 0,
+        "periodDays": 686.98
+      },
+      "visual": { "albedoMap": "./textures/2k/2k_mars.jpg" }
+    },
+    {
+      "id": "jupiter",
+      "name": "木星",
+      "type": "planet",
+      "parentId": "sun",
+      "radiusKm": 69911,
+      "rotation": { "periodSec": 35730, "axialTiltDeg": 3.13 },
+      "orbit": {
+        "a_AU": 5.2044,
+        "e": 0.0489,
+        "i_deg": 1.304,
+        "Omega_deg": 100.464,
+        "omega_deg": 273.867,
+        "M0_deg": 0,
+        "periodDays": 4332.59
+      },
+      "visual": { "albedoMap": "./textures/2k/2k_jupiter.jpg" }
+    },
+    {
+      "id": "saturn",
+      "name": "土星",
+      "type": "planet",
+      "parentId": "sun",
+      "radiusKm": 58232,
+      "rotation": { "periodSec": 38340, "axialTiltDeg": 26.73 },
+      "orbit": {
+        "a_AU": 9.5826,
+        "e": 0.0565,
+        "i_deg": 2.485,
+        "Omega_deg": 113.665,
+        "omega_deg": 339.392,
+        "M0_deg": 0,
+        "periodDays": 10759.22
+      },
+      "visual": { "albedoMap": "./textures/2k/2k_saturn.jpg" }
+    },
+    {
+      "id": "uranus",
+      "name": "天王星",
+      "type": "planet",
+      "parentId": "sun",
+      "radiusKm": 25362,
+      "rotation": { "periodSec": -62064, "axialTiltDeg": 97.77 },
+      "orbit": {
+        "a_AU": 19.2184,
+        "e": 0.0463,
+        "i_deg": 0.773,
+        "Omega_deg": 74.006,
+        "omega_deg": 96.998,
+        "M0_deg": 0,
+        "periodDays": 30688.5
+      },
+      "visual": { "albedoMap": "./textures/2k/2k_uranus.jpg" }
+    },
+    {
+      "id": "neptune",
+      "name": "海王星",
+      "type": "planet",
+      "parentId": "sun",
+      "radiusKm": 24622,
+      "rotation": { "periodSec": 57996, "axialTiltDeg": 28.32 },
+      "orbit": {
+        "a_AU": 30.11,
+        "e": 0.0097,
+        "i_deg": 1.77,
+        "Omega_deg": 131.784,
+        "omega_deg": 273.187,
+        "M0_deg": 0,
+        "periodDays": 60182
+      },
+      "visual": { "albedoMap": "./textures/2k/2k_neptune.jpg" }
+    }
+  ]
+}

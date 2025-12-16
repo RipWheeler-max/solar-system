@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>太阳系模拟（MVP）</title>
+    <style>
+      html, body { height: 100%; margin: 0; background: #000; overflow: hidden; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+      #app { position: fixed; inset: 0; }
+      canvas { display: block; }
+      .ui { position: fixed; inset: 0; pointer-events: none; color: #fff; }
+      .panel { pointer-events: auto; background: rgba(15, 15, 20, 0.72); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(6px); }
+      .topbar { position: absolute; left: 12px; right: 12px; top: 12px; padding: 10px 12px; display: flex; gap: 10px; align-items: center; justify-content: space-between; border-radius: 10px; }
+      .left { position: absolute; left: 12px; top: 70px; bottom: 12px; width: 260px; border-radius: 10px; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+      .right { position: absolute; right: 12px; top: 70px; bottom: 12px; width: 300px; border-radius: 10px; padding: 10px; overflow: auto; }
+      .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+      .row > * { font-size: 12px; }
+      button, select, input[type="checkbox"] { font-size: 12px; }
+      button { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.18); border-radius: 8px; padding: 6px 10px; cursor: pointer; }
+      button:hover { background: rgba(255,255,255,0.16); }
+      select { background: rgba(0,0,0,0.35); color: #fff; border: 1px solid rgba(255,255,255,0.18); border-radius: 8px; padding: 6px 8px; }
+      .list { overflow: auto; display: flex; flex-direction: column; gap: 6px; }
+      .item { padding: 8px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); background: rgba(0,0,0,0.25); cursor: pointer; }
+      .item.active { outline: 2px solid rgba(120,180,255,0.85); }
+      .muted { color: rgba(255,255,255,0.7); }
+      .kv { display: grid; grid-template-columns: 1fr auto; gap: 6px 10px; font-size: 12px; }
+      .kv div:nth-child(2n) { text-align: right; color: rgba(255,255,255,0.85); }
+      .title { font-weight: 700; margin-bottom: 8px; }
+      .spacer { flex: 1; }
+      .badge { font-size: 12px; padding: 3px 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.18); background: rgba(0,0,0,0.25); }
+      a { color: rgba(120,180,255,0.95); }
+      
+      /* 移动端适配 */
+      @media (max-width: 768px) {
+        .topbar { 
+          left: 5px; 
+          right: 5px; 
+          top: 5px; 
+          padding: 8px; 
+          flex-wrap: wrap; 
+          gap: 8px; 
+        }
+        .left { 
+          left: 5px; 
+          top: 60px; 
+          bottom: 5px; 
+          width: 40%; 
+          min-width: 150px;
+          padding: 8px; 
+        }
+        .right { 
+          right: 5px; 
+          top: 60px; 
+          bottom: 5px; 
+          width: 50%; 
+          min-width: 150px;
+          padding: 8px; 
+        }
+        .row { gap: 8px; }
+        .row > *, button, select, input[type="checkbox"] { font-size: 11px; }
+        button { padding: 5px 8px; }
+        select { padding: 5px 6px; }
+        .item { padding: 6px; }
+      }
+      
+      @media (max-width: 480px) {
+        .topbar { 
+          flex-direction: column; 
+          align-items: stretch; 
+          gap: 5px; 
+        }
+        .left { 
+          position: fixed; 
+          top: auto; 
+          bottom: 0; 
+          left: 0; 
+          right: 0; 
+          width: 100%; 
+          height: 30vh; 
+          z-index: 10; 
+          border-radius: 10px 10px 0 0; 
+        }
+        .right { 
+          position: fixed; 
+          top: 0; 
+          left: 0; 
+          right: 0; 
+          width: 100%; 
+          height: 40vh; 
+          z-index: 10; 
+          border-radius: 0 0 10px 10px; 
+          transform: translateY(-100%); 
+          transition: transform 0.3s ease; 
+        }
+        .right.show { 
+          transform: translateY(0); 
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-eVtB4cTL.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
