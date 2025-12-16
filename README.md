@@ -1,6 +1,6 @@
 # 🌌 3D Solar System Visualization (MVP)
 
-![Project Preview](preview.jpg)
+![Project Preview](preview.png)
 
 A interactive 3D simulation of the Solar System running directly in your browser. Built with **TypeScript** and **Vite**.
 
